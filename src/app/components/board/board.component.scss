@@ -1,0 +1,10 @@
+@import '../../../styles/constants.scss';
+
+:host {
+  display: grid;
+  grid-auto-flow: column;
+  height: calc(100vh - $header-height);
+  background: #fff;
+  padding-bottom: 10px;
+  box-sizing: border-box;
+}
