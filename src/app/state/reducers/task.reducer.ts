@@ -2,19 +2,19 @@ import { createReducer, on } from '@ngrx/store';
 import { Status } from 'src/app/constants';
 import { create, remove, updateStatus } from '../actions/task.actions';
 
-export type TaskId = string;
+export type BoardTaskId = string;
 
-export interface Task {
-  id: TaskId;
+export interface BoardTask {
+  id: BoardTaskId;
   description: string;
   status: Status;
 }
 
-// export interface State {
-//   cards: Array<Card>;
-// }
+export interface AppState {
+  tasks: Array<BoardTask>;
+}
 
-export const initialState: Array<Task> = [];
+export const initialState: Array<BoardTask> = [];
 
 export const taskReducer = createReducer(
   initialState,

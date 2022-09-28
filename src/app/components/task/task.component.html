@@ -1,0 +1,11 @@
+<div class="task-header">
+  <span class="task-id">{{ task?.id }}</span>
+  <mat-icon
+    aria-hidden="false"
+    aria-label="Close icon"
+    fontIcon="close"
+    (click)="onRemove()"
+  ></mat-icon>
+</div>
+<span class="description-header">Description:</span>
+<span class="description-value">{{ task?.description }}</span>

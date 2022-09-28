@@ -20,6 +20,7 @@ import {
   HeaderComponent,
   CreateTaskDialog,
   TaskCreatorComponent,
+  TaskComponent,
 } from './components';
 import { taskReducer } from './state/reducers/task.reducer';
 
@@ -31,6 +32,7 @@ import { taskReducer } from './state/reducers/task.reducer';
     ColumnComponent,
     CreateTaskDialog,
     TaskCreatorComponent,
+    TaskComponent,
   ],
   imports: [
     BrowserModule,

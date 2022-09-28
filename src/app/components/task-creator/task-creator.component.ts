@@ -6,7 +6,7 @@ import { filter, Subject, takeUntil } from 'rxjs';
 import { CreateTaskDialog } from '../create-task-dialog/create-task-dialog.component';
 import { UUIDService } from 'src/app/services/uuid.service';
 import { create } from 'src/app/state/actions/task.actions';
-import { Task } from 'src/app/state/reducers/task.reducer';
+import { BoardTask } from 'src/app/state/reducers/task.reducer';
 import { Status } from 'src/app/constants';
 
 @Component({
@@ -20,7 +20,7 @@ export class TaskCreatorComponent implements OnDestroy {
   constructor(
     private dialog: MatDialog,
     private uuidService: UUIDService,
-    private store: Store<{ tasks: Array<Task> }>
+    private store: Store<{ tasks: Array<BoardTask> }>
   ) {}
 
   public ngOnDestroy(): void {
@@ -45,7 +45,7 @@ export class TaskCreatorComponent implements OnDestroy {
   }
 
   private createTask(description: string): void {
-    const task: Task = {
+    const task: BoardTask = {
       description,
       id: this.uuidService.generateUUID(),
       status: Status.ToDo,

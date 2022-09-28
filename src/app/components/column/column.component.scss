@@ -1,4 +1,4 @@
-@import '../../../styles/constants.scss';
+@import "../../../styles/constants.scss";
 
 :host {
   min-width: $board-column-min-width;
@@ -9,10 +9,18 @@
 
 header {
   background: #fff;
-  color: #5e6c84;
+  color: $main-color;
   font-weight: bold;
   height: 40px;
   display: flex;
   justify-content: center;
   align-items: center;
+  position: sticky;
+  top: 0;
+}
+
+.task-list {
+  display: flex;
+  flex-direction: column;
+  padding: 0 10px 10px 10px;
 }

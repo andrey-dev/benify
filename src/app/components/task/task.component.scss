@@ -1,0 +1,39 @@
+@import "../../../styles/constants.scss";
+
+:host {
+  background: #fff;
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+}
+
+.task-header {
+  display: flex;
+  justify-content: space-between;
+
+  mat-icon {
+    cursor: pointer;
+  }
+
+  .task-id {
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    font-size: 12px;
+    color: #fff;
+    background: #5243aa;
+    border-radius: 2em;
+  }
+}
+
+.description-header {
+  margin: 10px 0;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.description-value {
+  color: $main-color;
+  max-width: fit-content;
+}
