@@ -2,7 +2,7 @@ import { createReducer, on } from '@ngrx/store';
 import { Status } from 'src/app/constants';
 import { create, remove, updateStatus } from '../actions/task.actions';
 
-export type TaskId = number;
+export type TaskId = string;
 
 export interface Task {
   id: TaskId;
@@ -29,6 +29,6 @@ export const taskReducer = createReducer(
         };
       }
       return task;
-    }),
-  ),
+    })
+  )
 );

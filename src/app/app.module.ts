@@ -14,11 +14,24 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 
 import { AppComponent } from './app.component';
-import { BoardComponent, ColumnComponent, HeaderComponent, CreateTaskDialog } from './components';
+import {
+  BoardComponent,
+  ColumnComponent,
+  HeaderComponent,
+  CreateTaskDialog,
+  TaskCreatorComponent,
+} from './components';
 import { taskReducer } from './state/reducers/task.reducer';
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, BoardComponent, ColumnComponent, CreateTaskDialog],
+  declarations: [
+    AppComponent,
+    HeaderComponent,
+    BoardComponent,
+    ColumnComponent,
+    CreateTaskDialog,
+    TaskCreatorComponent,
+  ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,

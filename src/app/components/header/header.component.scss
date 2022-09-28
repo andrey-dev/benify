@@ -1,4 +1,4 @@
-@import '../../../styles/constants.scss';
+@import "../../../styles/constants.scss";
 
 header {
   height: $header-height;
@@ -10,8 +10,4 @@ header {
   align-items: center;
   padding: 0 10px;
   box-sizing: border-box;
-}
-
-#create_btn {
-  border-color: rgba(0, 0, 0, 0.32);
 }

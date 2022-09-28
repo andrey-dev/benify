@@ -1,12 +1,20 @@
-<h1 mat-dialog-title>Create card</h1>
-<div mat-dialog-content>
-  <p>Task description</p>
+<form [formGroup]="taskForm" (ngSubmit)="onSubmit()">
+  <h1 mat-dialog-title>Create card</h1>
+
   <mat-form-field appearance="fill">
-    <mat-label>Favorite Animal</mat-label>
-    <input matInput [(ngModel)]="taskDescription" />
+    <mat-label>Task description</mat-label>
+    <input
+      matInput
+      formControlName="taskDescription"
+      aria-label="Task description"
+    />
+    <mat-error *ngIf="taskDescription.hasError('required')"
+      >Please add the description</mat-error
+    >
   </mat-form-field>
-</div>
-<div mat-dialog-actions>
-  <button mat-button (click)="onCancelClick()">Cancel</button>
-  <button mat-button [mat-dialog-close]="taskDescription" cdkFocusInitial>Ok</button>
-</div>
+
+  <div mat-dialog-actions align="end">
+    <button mat-button (click)="onCancelClick()">Cancel</button>
+    <button mat-button type="submit">Ok</button>
+  </div>
+</form>

@@ -1,5 +1,6 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-create-task-dialog',
@@ -8,10 +9,23 @@ import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dial
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CreateTaskDialog {
-  public taskDescription = '';
+  public taskForm = new FormGroup({
+    taskDescription: new FormControl('', Validators.required),
+  });
   constructor(public dialogRef: MatDialogRef<CreateTaskDialog>) {}
+
+  public get taskDescription(): FormControl {
+    return this.taskForm.get('taskDescription') as FormControl;
+  }
 
   public onCancelClick(): void {
     this.dialogRef.close();
+  }
+
+  public onSubmit(): void {
+    if (this.taskForm.invalid) {
+      return;
+    }
+    this.dialogRef.close(this.taskDescription.value);
   }
 }
