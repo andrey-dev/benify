@@ -12,6 +12,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { MatDividerModule } from '@angular/material/divider';
 
 import { AppComponent } from './app.component';
 import {
@@ -45,6 +46,7 @@ import { taskReducer } from './state/reducers/task.reducer';
     MatDialogModule,
     MatFormFieldModule,
     MatInputModule,
+    MatDividerModule,
     StoreModule.forRoot({ tasks: taskReducer }),
     StoreDevtoolsModule.instrument({
       name: 'Benify board app',

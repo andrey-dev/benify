@@ -1,8 +1,7 @@
-@import "../../../styles/constants.scss";
+@import '../../../styles/constants.scss';
 
 :host {
   background: #fff;
-  padding: 5px;
   display: flex;
   flex-direction: column;
   margin-top: 10px;
@@ -24,6 +23,9 @@
     color: #fff;
     background: #5243aa;
     border-radius: 2em;
+    height: 20px;
+    margin-top: 10px;
+    margin-left: 10px;
   }
 }
 
@@ -31,9 +33,22 @@
   margin: 10px 0;
   font-size: 14px;
   font-weight: bold;
+  margin-left: 10px;
 }
 
 .description-value {
   color: $main-color;
   max-width: fit-content;
+  margin-bottom: 5px;
+  margin-left: 10px;
+}
+
+.controls {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 5px;
+}
+
+button:disabled {
+  cursor: not-allowed;
 }

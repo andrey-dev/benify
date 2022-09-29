@@ -6,7 +6,9 @@
     <app-task
       *ngFor="let task of tasks; index as i; trackBy: trackById"
       [task]="task"
+      [status]="status"
       (removeTask)="onRemoveTask($event)"
+      (updateTaskStatus)="onUpdateTaskStatus($event)"
     ></app-task>
   </ng-container>
 </div>

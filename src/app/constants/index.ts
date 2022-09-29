@@ -3,3 +3,8 @@ export enum Status {
   Implementing = 'Implementing',
   Done = 'Done',
 }
+
+export enum Direction {
+  Left = 'Left',
+  Right = 'Right',
+}

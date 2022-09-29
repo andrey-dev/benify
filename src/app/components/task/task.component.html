@@ -1,11 +1,19 @@
 <div class="task-header">
-  <span class="task-id">{{ task?.id }}</span>
-  <mat-icon
-    aria-hidden="false"
-    aria-label="Close icon"
-    fontIcon="close"
-    (click)="onRemove()"
-  ></mat-icon>
+  <span class="task-id">{{ task.id }}</span>
+  <button mat-icon-button (click)="onRemove()">
+    <mat-icon aria-hidden="false" aria-label="Close icon" fontIcon="close"></mat-icon>
+  </button>
 </div>
+
 <span class="description-header">Description:</span>
-<span class="description-value">{{ task?.description }}</span>
+<span class="description-value">{{ task.description }}</span>
+
+<mat-divider id="divider"></mat-divider>
+<div class="controls">
+  <button mat-icon-button [disabled]="isLeftArrowDisabled" (click)="onMoveClick(direction.Left)">
+    <mat-icon>arrow_back</mat-icon>
+  </button>
+  <button mat-icon-button [disabled]="isRightArrowDisabled" (click)="onMoveClick(direction.Right)">
+    <mat-icon>arrow_forward</mat-icon>
+  </button>
+</div>

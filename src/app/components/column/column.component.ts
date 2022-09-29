@@ -1,13 +1,8 @@
-import {
-  ChangeDetectionStrategy,
-  Component,
-  Input,
-  OnInit,
-} from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { Status } from 'src/app/constants';
-import { remove } from 'src/app/state/actions/task.actions';
+import { remove, updateStatus, UpdateStatusData } from 'src/app/state/actions/task.actions';
 import { BoardTask, BoardTaskId } from 'src/app/state/reducers/task.reducer';
 import {
   selectDoneTasks,
@@ -40,6 +35,10 @@ export class ColumnComponent implements OnInit {
 
   public onRemoveTask(id: BoardTaskId): void {
     this.store.dispatch(remove({ id }));
+  }
+
+  public onUpdateTaskStatus(taskData: UpdateStatusData): void {
+    this.store.dispatch(updateStatus({ id: taskData.id, newStatus: taskData.newStatus }));
   }
 
   private getSelector() {
