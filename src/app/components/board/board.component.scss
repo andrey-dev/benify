@@ -1,4 +1,4 @@
-@import "../../../styles/constants.scss";
+@import '../../../styles/constants.scss';
 
 :host {
   display: grid;
@@ -8,4 +8,5 @@
   padding-bottom: 10px;
   box-sizing: border-box;
   overflow-x: auto;
+  min-width: 600px;
 }
